@@ -1,0 +1,275 @@
+/* --- style.css --- */
+:root {
+    --bg-dark: #0a0f1c;       /* Fond très sombre (bleu nuit) */
+    --card-bg: rgba(255, 255, 255, 0.05); /* Effet verre */
+    --primary: #3b82f6;       /* Bleu Data */
+    --accent: #8b5cf6;        /* Violet Tech */
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --glow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.7;
+    /* Petit effet de fond subtil */
+    background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+    min-height: 100vh;
+}
+
+a { text-decoration: none; transition: 0.3s ease; }
+ul { list-style: none; }
+
+/* Navigation */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 5%; max-width: 1200px; margin: 0 auto;
+    backdrop-filter: blur(10px); /* Flou derrière le menu */
+    position: sticky; top: 0; z-index: 100;
+}
+.logo { font-weight: 700; font-size: 1.5rem; background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; color: transparent; }
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a { color: var(--text-main); font-weight: 500; position: relative; }
+.nav-links a::after {
+    content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+    background: var(--primary); transition: 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+
+/* Boutons "Tech" */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white; padding: 12px 28px; border-radius: 50px; font-weight: 600;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    border: none; cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5); }
+
+.btn-outline {
+    background: transparent; border: 1px solid var(--primary); color: var(--primary);
+    padding: 8px 18px; border-radius: 50px; font-weight: 500;
+}
+.btn-outline:hover { background: rgba(59, 130, 246, 0.1); color: white; border-color: var(--accent); }
+
+/* Hero Section */
+.hero { text-align: center; padding: 8rem 1rem 5rem; max-width: 900px; margin: 0 auto; }
+.badge {
+    background: rgba(59, 130, 246, 0.1); color: var(--primary); border: 1px solid rgba(59, 130, 246, 0.3);
+    padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+}
+.hero h1 {
+    font-size: 4rem; margin: 1.5rem 0; line-height: 1.1; font-weight: 700;
+    background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; color: transparent;
+}
+.hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Animations Scroll (Classe ajoutée par JS) */
+.hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.show { opacity: 1; transform: translateY(0); }
+
+/* Cartes (Glassmorphism) */
+.section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+.section-title { font-size: 2.2rem; margin-bottom: 3rem; text-align: center; color: white; }
+
+.skills-grid, .projects-container { display: grid; gap: 2rem; }
+.skills-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.projects-container { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+
+.skill-card, .project-preview, .info-box {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 2.5rem; border-radius: 16px;
+    transition: 0.4s ease;
+}
+
+.skill-card:hover, .project-preview:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.skill-card h3 { color: var(--primary); margin-bottom: 1rem; font-size: 1.4rem; }
+.project-tag { color: var(--accent); font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.project-content h3 { font-size: 1.6rem; margin: 10px 0; color: white; }
+.link-arrow { display: inline-block; margin-top: 20px; color: var(--primary); font-weight: 600; }
+.link-arrow:hover { margin-left: 5px; color: var(--accent); }
+
+/* Pages Détails (Fixes couleurs) */
+.main-content h3 { color: var(--primary); font-size: 1.8rem; margin-top: 2rem; }
+.main-content, .sidebar { color: var(--text-muted); }
+.project-detail-container h1 { font-size: 3rem; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; color: transparent; }
+.tags-cloud span { background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid rgba(255,255,255,0.1); padding: 5px 12px; }
+
+/* Images */
+.project-image-container img { border: 1px solid rgba(255,255,255,0.1); }
+
+/* Footer */
+footer { text-align: center; padding: 4rem 1rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); }
+.email-link { font-size: 1.8rem; color: white; font-weight: 700; display: block; margin: 1.5rem 0; transition: 0.3s; }
+.email-link:hover { color: var(--primary); text-shadow: 0 0 15px rgba(59,130,246,0.6); }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; }
+}
+/* --- Ajouts pour les pages Projets "Design Centré" --- */
+
+/* Conteneur principal plus "focus" */
+.project-detail-container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    text-align: center; /* On centre tout le texte par défaut */
+}
+
+/* Le contenu principal devient une grande carte en verre */
+.main-content {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Titres avec dégradé subtil */
+.main-content h3 {
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: linear-gradient(to right, var(--primary), #a855f7);
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+}
+
+/* Petite ligne sous les titres pour le style */
+.main-content h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--primary);
+    margin: 10px auto 0; /* Centré */
+    border-radius: 2px;
+}
+
+/* Listes à puces centrées et sans les points moches */
+.main-content ul {
+    list-style: none;
+    padding: 0;
+}
+.main-content ul li {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+}
+/* On ajoute une petite icône stylée avant chaque puce */
+.main-content ul li::before {
+    content: '▹';
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+/* Sidebar (Colonne de droite) centrée */
+.sidebar .info-box {
+    text-align: center;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Centrer les tags */
+.tags-cloud {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+/* --- Bouton de transition "Tech Circle" --- */
+
+.transition-container {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-circle-scroll {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    /* Design "Verre" sombre */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    
+    color: var(--primary); /* Flèche bleue */
+    font-size: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Effet rebond */
+    cursor: pointer;
+}
+
+/* Effet au survol : Devient plein et lumineux */
+.btn-circle-scroll:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); /* Gros halo lumineux */
+    transform: scale(1.1) translateY(5px);
+}
+
+/* Petite animation pour dire "clique-moi" */
+.btn-circle-scroll i {
+    animation: floatingArrow 2s infinite ease-in-out;
+}
+
+@keyframes floatingArrow {
+    0%, 100% { transform: translateY(-2px); }
+    50% { transform: translateY(3px); }
+}
+/* --- Ajouts pour la photo de profil dans le Hero --- */
+
+/* On réorganise le Hero pour mettre l'image et le texte côte à côte */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem; /* Espace entre la photo et le texte */
+    text-align: left; /* Le texte est aligné à gauche maintenant */
+}
+
+.hero-text-container {
+    max-width: 600px;
+}
+
+/* Style de la photo */
+.profile-photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Recadre l'image pour qu'elle remplisse bien le cercle */
+    border-radius: 50%; /* Rend l'image ronde */
+    border: 3px solid rgba(59, 130, 246, 0.3); /* Bordure bleue subtile */
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2); /* Léger halo lumineux */
+}
+
+/* Adaptation pour mobile */
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column; /* Sur mobile, on empile : photo au-dessus, texte en dessous */
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .profile-photo {
+        width: 180px; /* Photo plus petite sur mobile */
+        height: 180px;
+    }
+}

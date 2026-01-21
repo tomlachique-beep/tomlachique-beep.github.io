@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Lachique | Portfolio Data Analyst</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Tom.Data</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#skills">Stack Technique</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Mon-cv.pdf" class="btn-outline" target="_blank">CV PDF</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-image-container">
+                <img src="IMG_3040.jpeg" alt="Photo de Tom Lachique" class="profile-photo">
+            </div>
+
+            <div class="hero-text-container">
+                <span class="badge">Disponible Mars 2026</span>
+                
+                <h1>Bonjour, je suis <br><span style="color: white;">Tom Lachique</span></h1>
+                
+                <h2 id="typing-text" style="color: var(--primary); min-height: 1.5em; margin-bottom: 20px;"></h2>
+                
+                <p>
+                    Étudiant en Master Data Analytics avec un background solide en Finance. 
+                    J'allie <strong>esprit critique</strong> et <strong>modélisation statistique</strong> pour transformer la donnée brute en stratégie.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#skills" class="btn-primary">Voir mon arsenal <i class="fas fa-arrow-down"></i></a>
+                    <a href="#contact" class="btn-secondary" style="margin-left: 10px; color: #94a3b8; text-decoration: underline;">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="skills" class="section hidden">
+        <h2 class="section-title">Arsenal Technique</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-python" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3>Programmation & Stats</h3>
+                <p>Python (Pandas, NumPy), Excel Expert, Économétrie, Modélisation Stochastique.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                <h3>Bases de Données</h3>
+                <p>SQL, MySQL. Capacité à requêter, nettoyer et structurer les données complexes.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-chart-pie" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3>Visualisation</h3>
+                <p>Power BI, Tableau, Excel Avancé. Création de dashboards décisionnels.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-brain" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+                <h3>Esprit Critique</h3>
+                <p>Fiabilité des données, Empathie, Capacité d'analyse et remise en question des résultats.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="transition-container hidden">
+        <a href="#projects" class="btn-circle-scroll" title="Voir les projets">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+
+    <section id="projects" class="section hidden">
+        <h2 class="section-title">Projets Réalisés</h2>
+        <div class="projects-container">
+            <article class="project-preview">
+                <div class="project-content">
+                    <span class="project-tag">Python • Finance de Marché</span>
+                    <h3>Étude Stochastique de Titres</h3>
+                    <p>Analyse de la volatilité et modélisation des prix de 5 entreprises (ex: BMW) avec calculs de rendements et indicateurs techniques.</p>
+                    <a href="projet-finance.html" class="link-arrow">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="project-preview">
+                <div class="project-content">
+                    <span class="project-tag">Python & Excel • Scoring</span>
+                    <h3>Déterminants d'un Prêt Bancaire</h3>
+                    <p>Construction d'un modèle prédictif pour évaluer la probabilité d'obtention d'un crédit selon le profil socio-économique.</p>
+                    <a href="projet-eco.html" class="link-arrow">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="project-preview">
+                <div class="project-content">
+                    <span class="project-tag">Power BI • Analytics</span>
+                    <h3>Dashboarding & KPIs</h3>
+                    <p>Visualisation de données et suivi de performance (Projet en cours d'intégration).</p>
+                    <span class="link-arrow" style="opacity: 0.5; cursor: default;">Bientôt disponible</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer id="contact" class="hidden">
+        <h2>Prêt à collaborer ?</h2>
+        <p>Je suis à la recherche d'un stage de 6 mois à partir de Mars 2026.</p>
+        
+        <a href="mailto:tom.lachique.135@gmail.com" class="email-link">tom.lachique.135@gmail.com</a>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">06 63 37 34 70</p>
+        
+        <div class="footer-links" style="display: flex; justify-content: center; gap: 20px;">
+            <a href="https://linkedin.com/in/tom-lachique-9b969427b" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://github.com/tomlachique-beep" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+        </div>
+        
+        <p class="copyright">© 2026 Tom Lachique • Codé avec passion.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

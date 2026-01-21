@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Prêt Bancaire - Projet Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="color:inherit;">Tom.Data</a></div>
+        <a href="index.html" class="btn-outline"><i class="fas fa-arrow-left"></i> Retour</a>
+    </nav>
+
+    <main class="project-detail-container">
+        
+        <header class="project-header">
+            <span class="badge">Projet Académique • Décembre 2024</span>
+            <h1 style="font-size: 3.5rem; margin: 20px 0;">Analyse des déterminants <br>d'un prêt</h1>
+            <p style="color: var(--text-muted); font-size: 1.3rem; max-width: 600px; margin: 0 auto;">
+                Étude économétrique et scoring bancaire via Python & Excel.
+            </p>
+        </header>
+
+        <div class="content-grid">
+            
+            <div class="main-content">
+                <h3>Le Contexte</h3>
+                <p>Ce projet visait à comprendre les mécanismes d'attribution des crédits bancaires. L'objectif était de déterminer quels profils socio-économiques maximisent la probabilité d'obtention d'un prêt et de minimiser les risques de défaut.</p>
+
+                <h3>Méthodologie</h3>
+                <ul>
+                    <li><strong>Nettoyage (Excel) :</strong> Traitement des valeurs manquantes, formatage des données brutes et analyses préliminaires (TCD).</li>
+                    <li><strong>Analyse Exploratoire (Python) :</strong> Visualisation des corrélations entre les variables (Revenus, Âge, Situation familiale) avec <em>Pandas</em> et <em>Seaborn</em>.</li>
+                    <li><strong>Modélisation :</strong> Régression logistique et tests statistiques pour évaluer la probabilité d'octroi du crédit.</li>
+                </ul>
+
+                <h3>Résultats</h3>
+                <p>Identification précise des facteurs discriminants. Nous avons établi une grille de "Scoring" permettant d'automatiser une partie de la prise de décision bancaire.</p>
+                
+                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 12px; margin-top: 30px; border: 1px dashed rgba(255,255,255,0.2);">
+                    <i class="fab fa-python" style="font-size: 2rem; color: var(--text-muted); margin-bottom: 10px;"></i>
+                    <p style="color: var(--text-muted);">[Espace pour capture d'écran : Notebook Python ou Tableau Excel]</p>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="info-box">
+                    <h4>Stack Technique</h4>
+                    <div class="tags-cloud">
+                        <span>Python</span><span>Excel Expert</span><span>Pandas</span><span>Scoring</span>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Points Clés</h4>
+                    <ul style="font-size: 0.9rem; text-align: center;">
+                        <li>Modélisation Prédictive</li>
+                        <li>Analyse de Risque</li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer style="margin-top: 4rem;">
+        <p>© 2026 Tom Lachique</p>
+    </footer>
+
+</body>
+</html>
